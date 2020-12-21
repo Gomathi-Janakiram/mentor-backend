@@ -11,6 +11,10 @@ const dbURL = process.env.db_URL||"mongodb://127.0.0.1:27017";
 app.use(express.json());
 app.use(cors())
 // mentors db
+
+app.get("/",async(req,res)=>{
+  res.send("welcome")
+})
 app.get("/mentors", async (req, res) => {
   try {
     let clientInfo = await mongoClient.connect(dbURL);
