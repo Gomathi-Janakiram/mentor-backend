@@ -6,7 +6,7 @@ const mongoClient = mongodb.MongoClient;
 const objectId = mongodb.ObjectID;
 
 const app = express();
-const dbURL = "mongodb://127.0.0.1:27017";
+const dbURL = process.env.db_URL||"mongodb://127.0.0.1:27017";
 
 app.use(express.json());
 app.use(cors())
