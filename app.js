@@ -4,6 +4,7 @@ require("dotenv").config()
 const cors=require("cors")
 const mongoClient = mongodb.MongoClient;
 const objectId = mongodb.ObjectID;
+const port=process.env.PORT||3000
 
 const app = express();
 const dbURL = process.env.db_URL||"mongodb://127.0.0.1:27017";
@@ -73,9 +74,9 @@ app.post("/students", async (req, res) => {
   });
 
 
-  app.listen(3000,(err)=>{
+  app.listen(port,(err)=>{
       if(err) throw err;
-      console.log("Listenign to port 3000")
+      console.log(`Listenign to port ${port}`)
   })
 
 //   assign students to mentors
